@@ -21,5 +21,6 @@ public class Methods {
         System.out.println(test.get("Heart"));
 
 
+
     }
 }

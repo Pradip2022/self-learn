@@ -6,5 +6,6 @@ public class Main {
         method.deckNumbers();
         System.out.println(method.deckNumbers());
         method.removeCard();
+        
         }
     }

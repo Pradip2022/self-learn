@@ -1,9 +1,11 @@
+import java.io.BufferedReader;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 
 public class Methods {
+
     HashMap<String, List<String>> deckHolder = new HashMap<>();
     static final List<String> deck = Arrays.asList("A","2","3","4","5","6","7","8","9","T","J","Q","K");
     LinkedList<String> heartDeck = new LinkedList<>(deck);

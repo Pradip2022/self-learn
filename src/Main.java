@@ -4,7 +4,6 @@ public class Main {
     public static void main(String[] args) {
         Methods method = new Methods();
         method.deckNumbers();
-        System.out.println(method.deckNumbers());
         method.removeCard();
         
         }

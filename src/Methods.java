@@ -4,23 +4,41 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class Methods {
-    List<String> deck = Arrays.asList("A","2","3","4","5","6","7","8","9","T","J","Q","K");
+    HashMap<String, List<String>> deckHolder = new HashMap<>();
+    static final List<String> deck = Arrays.asList("A","2","3","4","5","6","7","8","9","T","J","Q","K");
     LinkedList<String> heartDeck = new LinkedList<>(deck);
-    HashMap<String, List<String>> test = new HashMap<>();
-    public boolean deckNumbers(){
-        System.out.println(deck);
-        test.put("Heart", deck);
-        test.put("Spade", deck);
-        test.put("Club", deck);
-        test.put("Diamond", deck);
-        return true;
+    LinkedList<String> spadeDeck = new LinkedList<>(deck);
+    LinkedList<String> clubDeck = new LinkedList<>(deck);
+    LinkedList<String> diamondDeck = new LinkedList<>(deck);
+
+
+
+    public void deckNumbers(){
+        deckHolder.put("Heart", deck);
+        deckHolder.put("Spade", deck);
+        deckHolder.put("Club", deck);
+        deckHolder.put("Diamond", deck);
+
     }
     public void removeCard(){
+        System.out.println("\n\ndeck atm: " + deckHolder);
+        if (true){
+            heartDeck.remove("A");
+        }else if(true){
+            spadeDeck.remove("A");
+        }else if(true){
+            clubDeck.remove("A");
+        }else if (true){
+            diamondDeck.remove("A");
+        }else{
+            System.out.println("ERROR in removing card");
+        }
+        System.out.println("\n\n");
         heartDeck.remove("A");
-        test.replace("Heart",heartDeck);
-        System.out.println(test.get("Heart"));
-
-
-
+        changeCardLinkedList();
+        System.out.println("deck at the end: " + deckHolder);
+    }
+    public void changeCardLinkedList(){
+        deckHolder.replace("Heart",heartDeck);
     }
 }

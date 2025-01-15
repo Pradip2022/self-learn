@@ -6,6 +6,8 @@ public class Main {
     public static void main(String[] args) throws IOException {
         System.out.println("Hello welcome to my BlackJack program");
         Methods method = new Methods();
+        method.randomTwoCard();
+        method.randomTwoCard();
         Questions q = new Questions();
         q.question();
         method.deckNumbers();

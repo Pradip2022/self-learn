@@ -1,8 +1,6 @@
 import java.io.BufferedReader;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.List;
+import java.lang.reflect.Array;
+import java.util.*;
 
 public class Methods {
 
@@ -40,7 +38,19 @@ public class Methods {
         changeCardLinkedList();
         System.out.println("deck at the end: " + deckHolder);
     }
+
     public void changeCardLinkedList(){
         deckHolder.replace("Heart",heartDeck);
+    }
+    public int randomTwoCard(){
+        Random rand = new Random();
+        final int randomSuitNum = rand.nextInt(4);
+        final int randomNum = rand.nextInt(13);
+        ArrayList<Integer> randHolder = new ArrayList<>();
+        randHolder.add(randomNum);
+        if (randHolder.get(0) == 1){
+            System.out.println(1);
+        }
+        return 1;
     }
 }

@@ -20,10 +20,11 @@ public class Methods {
         deckHolder.put("Diamond", deck);
 
     }
-    public void removeCard(){
+    public void removeCard(String card){
         System.out.println("\n\ndeck atm: " + deckHolder);
         if (true){
-            heartDeck.remove("A");
+            heartDeck.remove(card);
+           changeCardLinkedList();
         }else if(true){
             spadeDeck.remove("A");
         }else if(true){
@@ -48,9 +49,21 @@ public class Methods {
         final int randomNum = rand.nextInt(13);
         ArrayList<Integer> randHolder = new ArrayList<>();
         randHolder.add(randomNum);
-        if (randHolder.get(0) == 1){
-            System.out.println(1);
+        if (randHolder.size()>0){
+            if(randomSuitNum ==0){
+                System.out.println("This is Heart "+ randomNum);
+                removeCard(String.valueOf(randomNum));
+            }else if(randomSuitNum ==1){
+                System.out.println("This is Spade");
+            }else if(randomSuitNum ==2){
+                System.out.println("This is Club");
+            }if(randomSuitNum ==3){
+                System.out.println("This is Diamond");
+            }
+            System.out.println(randomSuitNum);
+            System.out.println(randHolder.get(0));
         }
+
         return 1;
     }
 }

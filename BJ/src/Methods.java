@@ -1,5 +1,3 @@
-import java.io.BufferedReader;
-import java.lang.reflect.Array;
 import java.util.*;
 
 public class Methods {
@@ -20,30 +18,36 @@ public class Methods {
         deckHolder.put("Diamond", deck);
 
     }
-    public void removeCard(String card){
+    public void removeCard(int card, int suit){
         System.out.println("\n\ndeck atm: " + deckHolder);
-        if (true){
+        if (suit == 0){
             heartDeck.remove(card);
-           changeCardLinkedList();
-        }else if(true){
-            spadeDeck.remove("A");
-        }else if(true){
+        }else if(suit == 1){
+            spadeDeck.remove(card);
+        }else if(suit == 2){
             clubDeck.remove("A");
-        }else if (true){
+        }else if (suit == 3){
             diamondDeck.remove("A");
         }else{
             System.out.println("ERROR in removing card");
         }
         System.out.println("\n\n");
-        heartDeck.remove("A");
-        changeCardLinkedList();
+        changeCardLinkedList(suit);
         System.out.println("deck at the end: " + deckHolder);
     }
 
-    public void changeCardLinkedList(){
-        deckHolder.replace("Heart",heartDeck);
+    public void changeCardLinkedList(int suit){
+        if(suit == 0){
+            deckHolder.replace("Heart",heartDeck);
+        }else if(suit == 1){
+            deckHolder.replace("Spade",spadeDeck);
+        }else if(suit == 2){
+            deckHolder.replace("Club",clubDeck);
+        }else if(suit == 3){
+            deckHolder.replace("Diamond",diamondDeck);
+        }
     }
-    public int randomTwoCard(){
+    public void randomTwoCard(){
         Random rand = new Random();
         final int randomSuitNum = rand.nextInt(4);
         final int randomNum = rand.nextInt(13);
@@ -52,7 +56,7 @@ public class Methods {
         if (randHolder.size()>0){
             if(randomSuitNum ==0){
                 System.out.println("This is Heart "+ randomNum);
-                removeCard(String.valueOf(randomNum));
+                removeCard(randomNum,randomSuitNum);
             }else if(randomSuitNum ==1){
                 System.out.println("This is Spade");
             }else if(randomSuitNum ==2){
@@ -64,6 +68,5 @@ public class Methods {
             System.out.println(randHolder.get(0));
         }
 
-        return 1;
     }
 }
